@@ -1,0 +1,62 @@
+[
+  {
+    "id": "habit-1",
+    "name": "Morning Hydration",
+    "description": "Drink at least 500ml of fresh water right after waking up.",
+    "category": "Health",
+    "frequency": "Daily",
+    "icon": "Droplets",
+    "createdAt": "2026-10-01T07:00:00.000Z",
+    "completedDates": ["2026-10-23", "2026-10-24", "2026-10-25", "2026-10-26", "2026-10-27"]
+  },
+  {
+    "id": "habit-2",
+    "name": "Read 20 Pages",
+    "description": "Read non-fiction, technical essays, or literature before bedtime.",
+    "category": "Learning",
+    "frequency": "Daily",
+    "icon": "BookOpen",
+    "createdAt": "2026-10-05T08:30:00.000Z",
+    "completedDates": ["2026-10-24", "2026-10-25", "2026-10-26"]
+  },
+  {
+    "id": "habit-3",
+    "name": "Mindful Meditation",
+    "description": "10 minutes of quiet breathing and sensory awareness.",
+    "category": "Mindfulness",
+    "frequency": "Daily",
+    "icon": "Sparkles",
+    "createdAt": "2026-10-10T09:00:00.000Z",
+    "completedDates": ["2026-10-25", "2026-10-26", "2026-10-27"]
+  },
+  {
+    "id": "habit-4",
+    "name": "Deep Work Block",
+    "description": "90 minutes of distraction-free focus on the most important project task.",
+    "category": "Productivity",
+    "frequency": "Weekdays",
+    "icon": "Flame",
+    "createdAt": "2026-10-12T10:00:00.000Z",
+    "completedDates": ["2026-10-26", "2026-10-27"]
+  },
+  {
+    "id": "habit-5",
+    "name": "Strength Training",
+    "description": "Full-body workout or calisthenics focusing on core and posture.",
+    "category": "Health",
+    "frequency": "Weekdays",
+    "icon": "Dumbbell",
+    "createdAt": "2026-10-14T11:00:00.000Z",
+    "completedDates": ["2026-10-22", "2026-10-24", "2026-10-26"]
+  },
+  {
+    "id": "habit-6",
+    "name": "Weekly Review & Planning",
+    "description": "Review weekly achievements, clear inboxes, and plan next week's priorities.",
+    "category": "Productivity",
+    "frequency": "Weekly",
+    "icon": "Calendar",
+    "createdAt": "2026-10-04T12:00:00.000Z",
+    "completedDates": ["2026-10-18", "2026-10-25"]
+  }
+]
