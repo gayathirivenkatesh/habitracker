@@ -73,10 +73,9 @@ npm run preview
 ```
 D:\habitracker\
 ├── public\
-│   ├── favicon.svg              # Habitly logo favicon
-│   └── icons.svg
+│   ├── _redirects               # SPA client-side routing fallback
+│   └── favicon.svg              # Habitly logo favicon
 ├── src\
-│   ├── assets\                  # Static media assets
 │   ├── components\
 │   │   ├── Button.tsx           # Reusable accessible button with variants
 │   │   ├── EmptyState.tsx       # Zero-habits onboarding state
@@ -100,7 +99,8 @@ D:\habitracker\
 │   │   └── habits.json          # Starter fake habit dataset
 │   ├── pages\
 │   │   ├── HabitsPage.tsx       # Interactive dashboard workspace (/habits)
-│   │   └── LandingPage.tsx      # Editorial landing page (/)
+│   │   ├── LandingPage.tsx      # Editorial landing page (/)
+│   │   └── PricingPlanPage.tsx  # Dedicated plan overview and checkout page (/plan/:planId)
 │   ├── types\
 │   │   └── habit.ts             # Habit, Category, Frequency, & Filter types
 │   ├── utils\
