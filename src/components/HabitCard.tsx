@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, Flame, Trash2, Calendar } from 'lucide-react';
+import { Check, Flame, Trash2, Calendar, History } from 'lucide-react';
 import type { Habit } from '../types/habit';
 import { HabitIcon } from './HabitIcon';
 import { isCompletedToday, calculateStreak } from '../utils/habitHelpers';
@@ -9,6 +9,7 @@ interface HabitCardProps {
   todayStr: string;
   onToggleComplete: (id: string) => void;
   onDelete: (habit: Habit) => void;
+  onViewHistory?: (habit: Habit) => void;
 }
 
 export const HabitCard: React.FC<HabitCardProps> = ({
@@ -16,6 +17,7 @@ export const HabitCard: React.FC<HabitCardProps> = ({
   todayStr,
   onToggleComplete,
   onDelete,
+  onViewHistory,
 }) => {
   const isDone = isCompletedToday(habit, todayStr);
   const streak = calculateStreak(habit, todayStr);
@@ -86,7 +88,20 @@ export const HabitCard: React.FC<HabitCardProps> = ({
       </div>
 
       {/* Right controls */}
-      <div className="flex items-center justify-between sm:justify-end gap-3 pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-100 dark:border-slate-800/80 shrink-0">
+      <div className="flex items-center justify-between sm:justify-end gap-2.5 pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-100 dark:border-slate-800/80 shrink-0">
+        {/* History / Details button */}
+        {onViewHistory && (
+          <button
+            type="button"
+            onClick={() => onViewHistory(habit)}
+            aria-label={`View history and before details for ${habit.name}`}
+            title="View 30-day history and past logs"
+            className="p-2 text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 rounded-xl transition-colors cursor-pointer"
+          >
+            <History className="w-4 h-4" />
+          </button>
+        )}
+
         {/* Delete Habit button */}
         <button
           type="button"

@@ -84,11 +84,13 @@ D:\habitracker\
 │   │   ├── HabitCard.tsx        # Habit item card with completion & delete
 │   │   ├── HabitFilters.tsx     # Search, category, status, frequency, & sort
 │   │   ├── HabitFormModal.tsx   # Add Habit dialog with focus trap & validation
+│   │   ├── HabitHistoryModal.tsx# 30-day history and past logs modal
 │   │   ├── HabitIcon.tsx        # Category-themed Lucide icon wrapper
 │   │   ├── HabitSummary.tsx     # Dynamic summary statistics cards
 │   │   ├── Header.tsx           # Responsive header, nav drawer, theme toggle
 │   │   ├── LoadingSkeleton.tsx  # Skeleton placeholder matching real cards
 │   │   ├── NoResultsState.tsx   # Filter mismatch state with reset button
+│   │   ├── UserProfileModal.tsx # Personal details & focus goals modal
 │   │   └── WeeklyProgress.tsx   # 7-day momentum visualization strip
 │   ├── constants\
 │   │   └── icons.ts             # Available icon identifiers

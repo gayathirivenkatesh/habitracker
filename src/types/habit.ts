@@ -12,5 +12,12 @@ export interface Habit {
   completedDates: string[]; // array of YYYY-MM-DD strings
 }
 
+export interface UserProfile {
+  name: string;
+  focusMotto?: string;
+  email?: string;
+  dailyTarget?: number;
+}
+
 export type SortOption = 'name-asc' | 'name-desc' | 'status' | 'frequency';
 export type StatusFilter = 'all' | 'completed' | 'pending';

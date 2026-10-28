@@ -5,9 +5,15 @@ import { CalendarDays } from 'lucide-react';
 
 interface WeeklyProgressProps {
   habits: Habit[];
+  selectedDate?: string;
+  onSelectDate?: (dateStr: string) => void;
 }
 
-export const WeeklyProgress: React.FC<WeeklyProgressProps> = ({ habits }) => {
+export const WeeklyProgress: React.FC<WeeklyProgressProps> = ({
+  habits,
+  selectedDate,
+  onSelectDate,
+}) => {
   const days = getLast7DaysProgress(habits);
 
   return (
@@ -23,34 +29,40 @@ export const WeeklyProgress: React.FC<WeeklyProgressProps> = ({ habits }) => {
           </h2>
         </div>
         <span className="text-xs text-slate-500 dark:text-slate-400">
-          Daily completion percentages
+          Click any day to view or record past details
         </span>
       </div>
 
       <div className="grid grid-cols-7 gap-2 sm:gap-3">
         {days.map((day) => {
+          const isSelected = selectedDate ? selectedDate === day.dateStr : day.isToday;
+
           return (
-            <div
+            <button
               key={day.dateStr}
-              className={`flex flex-col items-center justify-between p-2.5 sm:p-3 rounded-xl border text-center transition-all ${
-                day.isToday
-                  ? 'bg-indigo-50/70 border-indigo-200 dark:bg-indigo-950/40 dark:border-indigo-800 ring-2 ring-indigo-500/20'
-                  : 'bg-slate-50/50 border-slate-100 dark:bg-slate-850/50 dark:border-slate-800/80'
+              type="button"
+              onClick={() => onSelectDate && onSelectDate(day.dateStr)}
+              className={`flex flex-col items-center justify-between p-2.5 sm:p-3 rounded-xl border text-center transition-all cursor-pointer ${
+                isSelected
+                  ? 'bg-indigo-50 border-indigo-400 dark:bg-indigo-950/70 dark:border-indigo-600 ring-2 ring-indigo-500 shadow-xs'
+                  : day.isToday
+                  ? 'bg-indigo-50/40 border-indigo-200 dark:bg-indigo-950/30 dark:border-indigo-800'
+                  : 'bg-slate-50/50 border-slate-100 dark:bg-slate-850/50 dark:border-slate-800/80 hover:border-slate-300'
               }`}
             >
               <span className={`text-[11px] font-semibold uppercase tracking-wider ${
-                day.isToday ? 'text-indigo-600 dark:text-indigo-400' : 'text-slate-500 dark:text-slate-400'
+                isSelected ? 'text-indigo-700 dark:text-indigo-300 font-bold' : 'text-slate-500 dark:text-slate-400'
               }`}>
                 {day.dayShort}
               </span>
 
               <span className={`text-sm sm:text-base font-bold my-1 ${
-                day.isToday ? 'text-indigo-900 dark:text-indigo-200' : 'text-slate-800 dark:text-slate-200'
+                isSelected ? 'text-indigo-950 dark:text-indigo-100 font-black' : 'text-slate-800 dark:text-slate-200'
               }`}>
                 {day.dayNumber}
               </span>
 
-              {/* Progress ring or mini bar */}
+              {/* Progress mini bar */}
               <div className="w-full mt-1 space-y-1">
                 <div className="w-full h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
                   <div
@@ -75,7 +87,7 @@ export const WeeklyProgress: React.FC<WeeklyProgressProps> = ({ habits }) => {
                   Today
                 </span>
               )}
-            </div>
+            </button>
           );
         })}
       </div>
