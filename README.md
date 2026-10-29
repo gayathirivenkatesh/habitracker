@@ -38,11 +38,11 @@ Habitly helps users build small, sustainable routines across Health, Learning, M
 
 ## 4. Setup Commands
 
-Clone or open the project folder `D:\habitracker` in your terminal:
+Clone or open the project folder `your_directory:\habitracker` in your terminal:
 
 ```bash
 # Navigate to project directory
-cd D:\habitracker
+cd your_directory:\habitracker
 
 # Install dependencies
 npm install
